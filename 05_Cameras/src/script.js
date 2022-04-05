@@ -2,22 +2,30 @@ import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
+/**
+ * Base
+ */
+// Canvas
+const canvas = document.querySelector("canvas.webgl");
+
+// Scene
+const scene = new THREE.Scene();
+
+// Object
+const mesh = new THREE.Mesh(
+  new THREE.BoxGeometry(1, 1, 1, 5, 5, 5),
+  new THREE.MeshBasicMaterial({ color: 0xff0000 })
+);
+scene.add(mesh);
+
 const cursor = {
   x: 0,
   y: 0,
 };
 window.addEventListener("mousemove", (e) => {
-  // console.log(e.clientX)
-  // console.log(e.clientY)
-
   cursor.x = e.clientX / sizes.width - 0.5;
   cursor.y = -(e.clientY / sizes.height - 0.5);
-
-  // console.log(cursor.y)
 });
-
-// Canvas
-const canvas = document.querySelector("canvas.webgl");
 
 // Sizes
 const sizes = {
@@ -60,16 +68,6 @@ window.addEventListener("dblclick", () => {
   }
 });
 
-// Scene
-const scene = new THREE.Scene();
-
-// Object
-const mesh = new THREE.Mesh(
-  new THREE.BoxGeometry(1, 1, 1, 5, 5, 5),
-  new THREE.MeshBasicMaterial({ color: 0xff0000 })
-);
-scene.add(mesh);
-
 // Camera
 const camera = new THREE.PerspectiveCamera(
   75,
@@ -97,8 +95,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 const clock = new THREE.Clock();
 
 const tick = () => {
-  const elapsedTime = clock.getElapsedTime();
-
+  //Update controls(updating Damping)
   controls.update();
   // Render
   renderer.render(scene, camera);
