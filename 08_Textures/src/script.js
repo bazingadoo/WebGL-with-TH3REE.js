@@ -62,8 +62,8 @@ const roughnessTexture = textureLoader.load("/textures/door/roughness.jpg");
 // colorTexture.center.x = 0.5;
 // colorTexture.center.y = 0.5;
 
-//min filter doesn't create mipmaps
-colorTexture.generateMipmaps = false;
+//min filter with nearestFilter doesn't need mipmaps
+colorTexture.generateMipmaps = false;         //deactivate
 colorTexture.minFilter = THREE.NearestFilter;
 colorTexture.magFilter = THREE.NearestFilter;
 
