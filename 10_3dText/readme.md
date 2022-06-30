@@ -1,10 +1,13 @@
 # Three.js Journey
 
+## Deployed here [3dText](https://3d-web-dev-new-rawwr.vercel.app)
+
 ## Setup
+
 Download [Node.js](https://nodejs.org/en/download/).
 Run this followed commands:
 
-``` bash
+```bash
 # Install dependencies (only the first time)
 npm install
 

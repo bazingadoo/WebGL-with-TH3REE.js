@@ -32,7 +32,7 @@ const matcapTexture = textureLoader.load("/textures/matcaps/8.png");
 const fontLoader = new FontLoader();
 fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
   // console.log("font Loaded");
-  const textGeometry = new TextGeometry("Welcome", {
+  const textGeometry = new TextGeometry("rickrolled", {
     font: font,
     size: 0.5,
     height: 0.2,
